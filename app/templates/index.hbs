@@ -1,1 +1,12 @@
-{{outlet}}
+<h1>Test start</h1>
+
+<p>Motion id: #{{model.id}}#</p>
+<p>Motion title: {{model.title}}</p>
+<p>Author: #{{model.author.id}}# -- {{model.author.fullName}}</p>
+
+<p>Selected generators: ({{model.selectedGenerators.length}})</p>
+{{#each model.selectedGenerators as |selectedGenerator|}}
+  <p>#{{selectedGenerator.id}}# (buffer: {{selectedGenerator.buffer}} -- #{{selectedGenerator.generator.id}}#, {{selectedGenerator.generator.name}}</p>
+{{/each}}
+
+<button {{action "submit" model}}>Save</button>

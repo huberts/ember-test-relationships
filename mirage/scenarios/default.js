@@ -1,4 +1,6 @@
-export default function(/* server */) {
+export default function(server) {
+  server.loadFixtures("authors");
+  server.loadFixtures("generators");
 
   /*
     Seed your development database using your factories.
